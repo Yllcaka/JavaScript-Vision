@@ -121,19 +121,44 @@ footer a {
     display: block;
 }
 
+i {
+    margin: 0 !important;
+}
+
 #to-do-list label,
 #DONE p {
     width: auto !important;
     font-size: 30px;
 }
 
+#to-do-list label {
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+#to-do-list input[type='checkbox']:hover+label,
+#to-do-list label:hover {
+    color: rgb(152, 223, 154);
+}
+
 input[type='checkbox'] {
+    margin-right: 0;
+    cursor: pointer;
     -webkit-appearance: none;
-    width: 25px;
-    height: 25px;
-    background: white;
-    border-radius: 5px;
-    border: 1px solid #555;
+    /* width: 25px;
+    height: 20px; */
+    transition: 0.3s ease-in-out;
+}
+
+input[type='checkbox']::before,
+.icon-ok {
+    content: '\e800';
+    font-size: 35px !important;
+    transition: 0.3s ease-in-out;
+}
+
+input[type='checkbox']:hover {
+    color: rgb(70, 155, 72);
 }
 
 #to-do-list i {
@@ -147,11 +172,18 @@ input[type='checkbox'] {
     color: rgb(255, 0, 0);
 }
 
-#DONE i {
+#DONE i,
+#DONE p {
     transition: 0.3s ease-in-out;
 }
 
-#DONE p:hover i,
+#DONE p:hover {
+    color: rgb(152, 223, 154);
+}
+
+
+#DONE p:hover span,
+#DONE span:hover,
 #DONE h2 {
     color: rgb(56, 150, 57);
 }

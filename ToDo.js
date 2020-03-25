@@ -15,7 +15,7 @@ function removing() {
         });
         checkboxes[i].addEventListener('click', function (event) {
             event.preventDefault();
-            DONE.innerHTML += `<p><i class="fas fa-check"></i>&nbsp${label}</p>`;
+            DONE.innerHTML += `<p><span class="icon-ok"></span>&nbsp${label}</p>`;
             itemnr.parentNode.remove();
         })
     }
@@ -41,7 +41,7 @@ function addToDo(item) {
     // existingItem = document.getElementById(`item${i}`);
     existingItem = document.getElementById(`item${i+1}`);
     let toDoItem = "<div class='to-do-item'>";
-    let checkbox = `&nbsp<input type="checkbox" id="item${i+1}" name="check">`;
+    let checkbox = `&nbsp<input type="checkbox" class="icon-ok" id="item${i+1}" name="check">`;
     let label = `&nbsp<label class="labels" for="item${i+1}">${item}</label></div>`;
     if (!(existingItem)) {
         toDo.innerHTML += toDoItem + cross + checkbox + label;
