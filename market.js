@@ -1,5 +1,6 @@
 var arr = ["BANANA", "STRAWBERRY", "ORANGE"];
 var market = document.getElementById("market");
+var inputing = document.getElementById("fruitadder");
 
 function inventory() {
     market.innerHTML = "";
@@ -16,3 +17,8 @@ function fruitadder(input) {
     inventory()
 }
 inventory();
+inputing.addEventListener("keypress", function (event) {
+    if (event.key == "Enter") {
+        fruitadder(this.id)
+    }
+})
