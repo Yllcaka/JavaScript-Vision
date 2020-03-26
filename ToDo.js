@@ -1,4 +1,5 @@
 var checkboxes = document.getElementsByName("check");
+var newtask = document.getElementById('NewTask');
 
 function removing() {
     let remove = document.getElementsByTagName("i");
@@ -50,3 +51,8 @@ function addToDo(item) {
     removing();
 }
 window.onload = removing();
+newtask.addEventListener('keypress', function (event) {
+    if (event.key == "Enter") {
+        addToDo(this.value);
+    }
+})
