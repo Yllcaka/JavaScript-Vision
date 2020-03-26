@@ -16,18 +16,30 @@ function removing() {
         });
         checkboxes[i].addEventListener('click', function (event) {
             event.preventDefault();
-            DONE.innerHTML += `<p><span class="icon-ok"></span>&nbsp${label}</p>`;
             itemnr.parentNode.remove();
+            DONE.innerHTML += `<p><span class="icon-ok"></span>&nbsp${label}</p>`;
+
         })
     }
 }
 
 function addToDo(item) {
     let toDo = document.getElementById("to-do-list");
-    let lastitem, i;
+    let lastitem, i, a;
     try {
         lastitem = checkboxes[checkboxes.length - 1].id;
-        i = parseInt(lastitem.substring(lastitem.length - 1, lastitem.length));
+        switch (lastitem.length) {
+            case 6:
+                a = 2;
+                break;
+            case 7:
+                a = 3;
+                break;
+            default:
+                a = 1;
+        }
+        i = parseInt(lastitem.substring(lastitem.length - a, lastitem.length));
+
     } catch (error) {
         lastitem = 1;
         i = 1;
