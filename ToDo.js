@@ -9,7 +9,6 @@ function removing() {
     for (let i = 0; i < remove.length; i++) {
         let itemnr = checkboxes[i];
         let label = labels[i].innerHTML;
-        console.log(i);
         checkboxes[i].checked = false;
         remove[i].addEventListener('click', function () {
             itemnr.parentNode.remove();
@@ -45,8 +44,6 @@ function addToDo(item) {
         i = 1;
     }
 
-    // console.log(i[]);
-    console.log(i);
     let cross = `<i class="fas fa-times"></i>`;
     if (item.trim() == "") {
         return false;
@@ -58,7 +55,6 @@ function addToDo(item) {
     let label = `&nbsp<label class="labels" for="item${i+1}">${item}</label></div>`;
     if (!(existingItem)) {
         toDo.innerHTML += toDoItem + cross + checkbox + label;
-        console.log(toDoItem + cross + checkbox + label);
     }
     removing();
 }
