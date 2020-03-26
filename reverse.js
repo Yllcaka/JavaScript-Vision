@@ -1,10 +1,15 @@
-function reverse() {
-    var reverse = document.getElementById("reverse");
-    var reversed = document.getElementById("reversed");
-    reverse = reverse.value.split("");
-    reverse = reverse.reverse();
-    reversed.innerHTML = reverse.join("");
+var reverseid = document.getElementById("reverse");
+var reversed = document.getElementById("reversed");
+
+reverseid.onkeyup = reversion;
+
+function reversing(reverseid, reversed) {
+    reverseid = reverseid.value.split("");
+    reverseid = reverseid.reverse();
+    reversed.innerHTML = reverseid.join("");
 }
-setInterval(function () {
-    reverse();
-}, 100)
+
+function reversion(event) {
+    reversing(reverse, reversed);
+}
+reversing(reverse, reversed);

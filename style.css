@@ -10,6 +10,16 @@ body {
     scroll-behavior: smooth;
 }
 
+ul {
+    list-style: none;
+}
+
+/* .searchItem {
+    display: inline-block;
+    zoom: 1;
+    padding-right: 30px;
+} */
+
 hr {
     border: 4px solid white;
 }
@@ -187,6 +197,7 @@ input[type='checkbox']:hover {
 #DONE h2 {
     color: rgb(56, 150, 57);
 }
+
 
 @media screen and (max-width:991px) and (min-width:768px),
 (max-width:450px) {
