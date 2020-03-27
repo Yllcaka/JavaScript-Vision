@@ -22,175 +22,190 @@
     <script src="reverse.js" async></script>
     <script src="ToDo.js" async></script>
     <script src="SearchFilter.js" async></script>
+    <script src="Tabs.js" async></script>
 </head>
 
 <body>
-    <section class="container">
-        <h1 class="text-center" style="color: #195215;">Shiko edhe Consolen për më shumë të dhëna</h1>
-        <div class="row">
-            <div class="col-md-6">
-                <div>
-                    <span class="detyra">DETYRA 1.)</span>
-                    <h3 id="Date"></h3>
-                    <p id="christmas"></p>
-                </div>
-                <div>
-                    <span class="detyra">DETYRA 2.)</span>
-                    <p style="margin-bottom: 0;">All links in the site:</p>
-                    <ul style="margin-top: 0;" id="linklist"></ul>
-                    <a href="https://www.facebook.com/" target="_blank">Facebook</a>
-                    <a href="https://twitter.com" target="_blank">Twitter</a>
-                    <a href="https://instagram.com" target="_blank">Instragram</a>
-                </div>
-                <div>
-                    <span class="detyra">DETYRA 3.)</span>
-                    <p id="seperator"></p>
-                </div>
-
-            </div>
-            <form id="forma" action="final.html" onsubmit="return validimi()" class="col-md-6">
-                <h1 class="text-center pr-5">Forma</h1>
-                <div>
-                    <label for="emri">Emri:</label>
-                    <input name="emri" id="emri" type="text" placeholder="Filan">
-                    <p class="invalid">*Duhet te filloj me shkrojn te
-                        madhe, dhe te vazhdoj me te vogla</p>
-                </div>
-                <div>
-                    <label for="mbiemri">Mbiemri:</label>
-                    <input name="mbiemri" id="mbiemri" type="text" placeholder="Fisteku">
-                    <p class="invalid">*Duhet te filloj me shkrojn te
-                        madhe, dhe te vazhdoj me te vogla</p>
-                </div>
-                <div>
-                    <label for="numri">Tel:</label>
-                    <input name="numri" id="numri" type="tel" placeholder="+383-49-333-893, 38349570123">
-                    <p class="invalid">*Shembuj:+383-49-333-893, 38349570123</p>
-                </div>
-                <div>
-                    <label for="e-mail">E-mail</label>
-                    <input name="e-mail" id="e-mail" type="text" placeholder="example@gmail.com">
-                    <p class="invalid">
-                        *Invalid
-                        Shembuj:
-                        example@gmail.com, example@outlook.co.uk
-                    </p>
-                </div>
-                <div id="gjinia">
-                    <p>Gjinia:</p>
-                    <label for="mashkull">M</label>
-                    <input id="mashkull" type="radio" name="gjinia" value="M" checked>
-                    <label for="femer">F</label>
-                    <input id="femer" type="radio" name="gjinia" value="F">
-                </div>
-                <input id="submit" type="submit" value="Dergo">
-            </form>
-        </div>
-    </section>
-    <hr>
-    <section class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <p class="detyra">DETYRA 4.)</p>
-                <p>Kliko per me ba faqen overload</p>
-                <button onclick="blocking('overloading')">Overload Site</button>
-                <p id="overloading"></p>
-            </div>
-            <div class="col-md-4">
-                <p class="detyra">DETYRA 5.)</p>
-                <ul id="market"></ul>
-                <p>Do you wanna add any other item?</p>
-                <input id="fruitadder" name="fruitadder" type="text">
-                <button class="mt-2" onclick="fruitadder('fruitadder')">Add</button>
-            </div>
-            <div class="col-md-4">
-                <p class="detyra">DETYRA 6.)</p>
-                <p id="items"></p>
-                <p id="sorteditems"></p>
-            </div>
-        </div>
-    </section>
-    <hr>
-    <section class="container">
-        <div>
-            <div class="calculator text-center">
-                <p>CALCULATOR</p>
-                <input id="first" type="text" inputmode="numeric">
-                <span id="operator">+</span>
-                <input id="second" type="text" inputmode="numeric">
-                =
-                <input id="result" type="text">
-                <div class="operators text-center mt-2">
-                    <button onclick="calculate('addition')">+</button>
-                    <button onclick="calculate('subtraction')">-</button>
-                    <button onclick="calculate('multiplication')">*</button>
-                    <button onclick="calculate('division')">/</button>
-                </div>
-            </div>
-        </div>
-    </section>
-    <hr>
-    <div class="text-center my-5">
-        <input type="text" id="reverse" placeholder="Reverse"> ----->
-        <span id="reversed"></span>
-    </div>
-    <hr>
-    <section class="container">
-        <div>
-            <div class="text-center">
-                <p>Add new task: </p>
-                <input type="text" id="NewTask" name="NewTask">
-                <button class="mt-4" onclick="addToDo(document.getElementById('NewTask').value)">Add</button>
-            </div>
+    <nav class="tabs text-center mx-auto container">
+        <li style="float:left">Form</li>
+        <li>Calculator</li>
+        <li style="float:right">To-Do</li>
+    </nav>
+    <br>
+    <h1 class="text-center" style="color: #195215;">Shiko edhe Consolen për më shumë të dhëna</h1>
+    <div class="tabcontainer">
+        <section class="container">
             <div class="row">
-                <div class="col-md-6" id="to-do-list">
-                    <h2 class="text-center">To-Do List</h2>
-                    <div class="to-do-item">
-                        <i class="fas fa-times"></i>
-                        <input class="icon-ok" type="checkbox" id="item1" name="check">
-                        <label class="labels" for="item1">Milk</label>
+                <div class="col-md-6">
+                    <div>
+                        <span class="detyra">DETYRA 1.)</span>
+                        <h3 id="Date"></h3>
+                        <p id="christmas"></p>
                     </div>
-                    <div class="to-do-item">
-                        <i class="fas fa-times"></i>
-                        <input class="icon-ok" type="checkbox" id="item2" name="check">
-                        <label class="labels" for="item2">Orange Juice</label>
+                    <div>
+                        <span class="detyra">DETYRA 2.)</span>
+                        <p style="margin-bottom: 0;">All links in the site:</p>
+                        <ul style="margin-top: 0;" id="linklist"></ul>
+                        <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+                        <a href="https://twitter.com" target="_blank">Twitter</a>
+                        <a href="https://instagram.com" target="_blank">Instragram</a>
                     </div>
-                    <div class="to-do-item">
-                        <i class="fas fa-times"></i>
-                        <input class="icon-ok" type="checkbox" id="item3" name="check">
-                        <label class="labels" for="item3">Cookies</label>
+                    <div>
+                        <span class="detyra">DETYRA 3.)</span>
+                        <p id="seperator"></p>
                     </div>
+
                 </div>
-                <div id="DONE" class="col-md-6">
-                    <h2 class="text-center">Completed</h2>
+                <form id="forma" action="final.html" onsubmit="return validimi()" class="col-md-6">
+                    <h1 class="text-center pr-5">Forma</h1>
+                    <div>
+                        <label for="emri">Emri:</label>
+                        <input name="emri" id="emri" type="text" placeholder="Filan">
+                        <p class="invalid">*Duhet te filloj me shkrojn te
+                            madhe, dhe te vazhdoj me te vogla</p>
+                    </div>
+                    <div>
+                        <label for="mbiemri">Mbiemri:</label>
+                        <input name="mbiemri" id="mbiemri" type="text" placeholder="Fisteku">
+                        <p class="invalid">*Duhet te filloj me shkrojn te
+                            madhe, dhe te vazhdoj me te vogla</p>
+                    </div>
+                    <div>
+                        <label for="numri">Tel:</label>
+                        <input name="numri" id="numri" type="tel" placeholder="+383-49-333-893, 38349570123">
+                        <p class="invalid">*Shembuj:+383-49-333-893, 38349570123</p>
+                    </div>
+                    <div>
+                        <label for="e-mail">E-mail</label>
+                        <input name="e-mail" id="e-mail" type="text" placeholder="example@gmail.com">
+                        <p class="invalid">
+                            *Invalid
+                            Shembuj:
+                            example@gmail.com, example@outlook.co.uk
+                        </p>
+                    </div>
+                    <div id="gjinia">
+                        <p>Gjinia:</p>
+                        <label for="mashkull">M</label>
+                        <input id="mashkull" type="radio" name="gjinia" value="M" checked>
+                        <label for="femer">F</label>
+                        <input id="femer" type="radio" name="gjinia" value="F">
+                    </div>
+                    <input id="submit" type="submit" value="Dergo">
+                </form>
+            </div>
+        </section>
+        <hr>
+    </div>
+
+    <div class="tabcontainer">
+        <section class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <p class="detyra">DETYRA 4.)</p>
+                    <p>Kliko per me ba faqen overload</p>
+                    <button onclick="blocking('overloading')">Overload Site</button>
+                    <p id="overloading"></p>
+                </div>
+                <div class="col-md-4">
+                    <p class="detyra">DETYRA 5.)</p>
+                    <ul id="market"></ul>
+                    <p>Do you wanna add any other item?</p>
+                    <input id="fruitadder" name="fruitadder" type="text">
+                    <button class="mt-2" onclick="fruitadder('fruitadder')">Add</button>
+                </div>
+                <div class="col-md-4">
+                    <p class="detyra">DETYRA 6.)</p>
+                    <p id="items"></p>
+                    <p id="sorteditems"></p>
                 </div>
             </div>
+        </section>
+        <hr>
+        <section class="container">
+            <div>
+                <div class="calculator text-center">
+                    <p>CALCULATOR</p>
+                    <input id="first" type="text" inputmode="numeric">
+                    <span id="operator">+</span>
+                    <input id="second" type="text" inputmode="numeric">
+                    =
+                    <input id="result" type="text">
+                    <div class="operators text-center mt-2">
+                        <button onclick="calculate('addition')">+</button>
+                        <button onclick="calculate('subtraction')">-</button>
+                        <button onclick="calculate('multiplication')">*</button>
+                        <button onclick="calculate('division')">/</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <div class="text-center my-5">
+            <input type="text" id="reverse" placeholder="Reverse"> ----->
+            <span id="reversed"></span>
         </div>
-    </section>
-    <section class="container">
-        <div>
-            <input type="text" id="searching" placeholder="Search" onkeyup="filter(search, list)">
-            <ul id="searchstuff">
-                <li class="searchItem">Molla</li>
-                <li class="searchItem">Dardha</li>
-                <li class="searchItem">Bananja</li>
-                <li class="searchItem">Rrushi</li>
-                <li class="searchItem">Dredhza</li>
-                <li class="searchItem">Ananasi</li>
-                <li class="searchItem">Avokado</li>
-                <li class="searchItem">Boronica</li>
-                <li class="searchItem">Fiku</li>
-                <li class="searchItem">Ftoi</li>
-                <li class="searchItem">Hurma</li>
-                <li class="searchItem">Kivi</li>
-                <li class="searchItem">Kajsia</li>
-                <li class="searchItem">Pjeshka</li>
-                <li class="searchItem">Portokalli</li>
-                <li class="searchItem">Molla e Eger</li>
-                <li class="searchItem">Shega</li>
-            </ul>
-        </div>
-    </section>
+        <hr>
+    </div>
+
+    <div class="tabcontainer">
+        <section class="container">
+            <div>
+                <div class="text-center">
+                    <p>Add new task: </p>
+                    <input type="text" id="NewTask" name="NewTask">
+                    <button class="mt-4" onclick="addToDo(document.getElementById('NewTask').value)">Add</button>
+                </div>
+                <div class="row">
+                    <div class="col-md-6" id="to-do-list">
+                        <h2 class="text-center">To-Do List</h2>
+                        <div class="to-do-item">
+                            <i class="fas fa-times"></i>
+                            <input class="icon-ok" type="checkbox" id="item1" name="check">
+                            <label class="labels" for="item1">Milk</label>
+                        </div>
+                        <div class="to-do-item">
+                            <i class="fas fa-times"></i>
+                            <input class="icon-ok" type="checkbox" id="item2" name="check">
+                            <label class="labels" for="item2">Orange Juice</label>
+                        </div>
+                        <div class="to-do-item">
+                            <i class="fas fa-times"></i>
+                            <input class="icon-ok" type="checkbox" id="item3" name="check">
+                            <label class="labels" for="item3">Cookies</label>
+                        </div>
+                    </div>
+                    <div id="DONE" class="col-md-6">
+                        <h2 class="text-center">Completed</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container">
+            <div>
+                <input type="text" id="searching" placeholder="Search">
+                <ul id="searchstuff">
+                    <li class="searchItem">Molla</li>
+                    <li class="searchItem">Dardha</li>
+                    <li class="searchItem">Bananja</li>
+                    <li class="searchItem">Rrushi</li>
+                    <li class="searchItem">Dredhza</li>
+                    <li class="searchItem">Ananasi</li>
+                    <li class="searchItem">Avokado</li>
+                    <li class="searchItem">Boronica</li>
+                    <li class="searchItem">Fiku</li>
+                    <li class="searchItem">Ftoi</li>
+                    <li class="searchItem">Hurma</li>
+                    <li class="searchItem">Kivi</li>
+                    <li class="searchItem">Kajsia</li>
+                    <li class="searchItem">Pjeshka</li>
+                    <li class="searchItem">Portokalli</li>
+                    <li class="searchItem">Molla e Eger</li>
+                    <li class="searchItem">Shega</li>
+                </ul>
+            </div>
+        </section>
+    </div>
     <footer class="text-center"><a href="#">Shko ne fillim te faqes</a></footer>
 </body>
 
