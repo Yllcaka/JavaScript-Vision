@@ -1,10 +1,12 @@
 var tabs = document.getElementsByClassName("tabs")[0].children;
 var tabcontainers = document.getElementsByClassName("tabcontainer");
+var iso = document.getElementById("iso");
 
 function switchtabs(number) {
     if (tabcontainers[number].style.display == "block") {
         return;
     }
+
     for (let i = 0; i < tabcontainers.length; i++) {
         tabcontainers[i].style.opacity = "0";
         setTimeout(function () {

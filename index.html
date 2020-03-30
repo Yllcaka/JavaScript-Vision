@@ -23,6 +23,8 @@
     <script src="ToDo.js" async></script>
     <script src="SearchFilter.js" async></script>
     <script src="Tabs.js" async></script>
+    <script src="modal.js" async></script>
+
 </head>
 
 <body>
@@ -96,9 +98,10 @@
             </div>
         </section>
         <hr>
+
     </div>
 
-    <div class="tabcontainer">
+    <div class="tabcontainer" style="display: none;">
         <section class="container">
             <div class="row">
                 <div class="col-md-4">
@@ -148,7 +151,7 @@
         <hr>
     </div>
 
-    <div class="tabcontainer">
+    <div class="tabcontainer" style="display: none;">
         <section class="container">
             <div>
                 <div class="text-center">
@@ -204,9 +207,65 @@
                     <li class="searchItem">Shega</li>
                 </ul>
             </div>
+            <div id="modal">
+                <div class="insidemodal">
+                    <i id="modalclose" class="fas fa-times"></i>
+                    <div class="header mt-3">
+                        <h1 class="text-center">GOODBYE</h1>
+                    </div>
+                    <img class="text-center" src="DOM.jpg" alt="Dom">
+                    <div class="footer text-center">With love from <span class="heart">❤️</span>DOM<span
+                            class="heart">❤️</span></div>
+                </div>
+            </div>
+            <div class="text-center">
+                <h2>Modal</h2>
+                <button id="modalbutton" class="mx-auto">Message to the front-end</button>
+            </div>
+            <hr>
+
         </section>
     </div>
+    <div id="iso" class="container">
+        <div class="filtering">
+            <button data-name="*">All</button>
+            <button data-name=".fruit">Pemë</button>
+            <button data-name=".vegetable">Perime</button>
+            <button data-name=".other">Tjera</button>
+        </div>
+        <div class="grid">
+            <div class="grid-item fruit">Molla</div>
+            <div class="grid-item vegetable">Qepa</div>
+            <div class="grid-item fruit">Dardha</div>
+            <div class="grid-item vegetable">Spinaq</div>
+            <div class="grid-item other">Pogaçe(Bukë nore)</div>
+            <div class="grid-item fruit">Pjeshka</div>
+            <div class="grid-item vegetable">Lakra</div>
+            <div class="grid-item other">Smoka</div>
+            <div class="grid-item vegetable">Kastravec</div>
+            <div class="grid-item fruit">Boronica</div>
+            <div class="grid-item other">Flia</div>
+            <div class="grid-item fruit">Ananasi</div>
+            <div class="grid-item other">Pite</div>
+            <div class="grid-item vegetable">Karrota</div>
+        </div>
+    </div>
     <footer class="text-center"><a href="#">Shko ne fillim te faqes</a></footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <script src="isotope.pkgd.min.js"></script>
+    <script src="isotopetabs.js">
+
+    </script>
 </body>
 
 </html>
